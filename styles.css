@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Bungee+Spice&family=Kanit&family=Roboto&family=Russo+One&family=Varela+Round&display=swap');
+
+
+:root {
+    --secondary: #000000 !important;
+    --Anton: 'Anton', sans-serif;
+    --Bebas: 'Bebas Neue', sans-serif;
+    --Bungee: 'Bungee Spice', cursive;
+    --Kanit: 'Kanit', sans-serif;
+    --Roboto: 'Roboto', sans-serif;
+    --Russo: 'Russo One', sans-serif;
+    --Varela: 'Varela Round', sans-serif;
+}
+body {
+    color: #FFFFFF;
+    background: rgba(208, 81, 13, 0.824);
+    background: linear-gradient(135deg, rgba(46,215,37,1) 0%, rgba(28,153,16,1) 30%, rgba(255,153,0,1) 100%);
+    font-family: var(--Varela);
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    justify-content: center;
+    grid-template-areas:
+        "split"
+        "self"
+        "links"
+        "content";
+}
+
+.split {
+    height: 2rem;
+    grid-area: split;
+}
+.image-container {
+    display: flex;
+    position: relative;
+    place-items: center;
+    justify-content: center;
+    text-align: center;
+    height: auto;
+    grid-area: pfp;
+    width: 100%;
+}
+.name-container {
+    display: flex;
+    position: relative;
+    padding: 0 1rem;
+    border-radius: 16.67px;
+    background-color: #FFFFFF;
+    border: 1px solid #EF860F;
+    justify-content: center;
+    grid-area: name;
+    margin: 1rem;
+}
+[class="modal container details"] {
+    display: none;
+    position: absolute;
+    top: 27.5rem;
+    left: 40%;
+    width: 20%;
+    color: black;
+    height: fit-content;
+    opacity: 0;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    padding-top: 0.75rem;
+    transition: all 0.4s ease-in-out;
+    border-radius: 66.67%;
+    background: linear-gradient(90deg, 
+    rgba(255, 255, 255, 0) 0%, 
+    rgba(255, 255, 255, 0.75) 10%, 
+    rgba(255, 255, 255, 1) 50%, 
+    rgba(255, 255, 255, 0.75) 90%, 
+    rgba(255, 255, 255, 0) 100%);
+}
+.name-container:hover ~ [class="modal container details"] {
+    display: flex;
+    opacity: 1;
+}
+.name-container>h1 {
+    font-family: var(--Bungee);
+    padding-top: 0.75rem;
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+.links-container {
+    display: flex;
+    position: relative;
+    padding-bottom: 2rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-area: links;
+    gap: 20px;
+}
+.content-container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    background-color: #1A1A1A;
+    border-radius: 16.67px;
+    padding: 1rem 2.5rem;
+    width: 125%;
+    place-items: center;
+    justify-content: center;
+    grid-area: content;
+    grid-template-areas: 
+        "heading"
+        "sub-heading"
+        "content"
+        "connect";
+}
+.content-container>h3 {
+    border-radius: 16.67px;
+    font-family: var(--Russo);
+    padding: 1.75rem 1.25rem;
+    border-color: ##FFE4B5;
+    background-color: #FF6347;
+    font-color: #d20808;
+    grid-area: heading;
+    margin-top: 0.75rem;
+    margin-bottom: 2.25rem;
+}
+
+.content-container>h5 {
+    color: #FF9900;
+    font-weight: 800;
+    font-size: xx-large;
+    grid-area: auto;
+}
+
+.content-container>p {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: oblique;
+    font-size: larger;
+    font-weight: 700;
+    text-align: center;
+    grid-area: content;
+}
+
+.content-container>div {
+    font-family: monospace;
+    display: flex;
+    width: 75%;
+    grid-area: connect;
+}
+
+.link {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    min-width: 50% !important;
+}
+
+@media (min-width: 1200px) {
+    .container {
+       font-size: 500;
+       font-family: monospace;
+        max-width: 1140px;
+    }
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+    .container {
+        max-width: 960px;
+    }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+    .container {
+        max-width: 720px;
+    }
+    .link {
+        width: 100%;
+    }
+}
+@media (min-width: 576px) and (max-width: 768px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+.w3-yellow,
+.w3-hover-purple:hover,
+.w3-text-black {
+    color: rgba(255, 204, 217) !important;
+    background-color: rgba(255, 255, 179, 0.3) !important;
+}
+
+img.pfp {
+    display: flex;
+    border-radius: 16.67px;
+    border: ridge #b06d08 4px;
+    z-index: 2;
+    box-shadow:
+        0 0 7px rgba(0,0,0, 1),
+        0 0 14px rgba(0,0,0,1);
+}
+#name {
+    font: small-caps bolder 42px icon;
+    font-family: monospace;
+    position: center;
+    width: 1000px;
+}
+#assignment {
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    left: 50%;
+}
+
+details > summary{
+    width: 11em;
+    background-color: #EF860F;
+    border: ridge darkorange;
+    box-shadow: 6px 6px 8px green;
+    cursor: auto;
+}
+
+details > {
+    border-radius: 69%;
+    background-color: #EF860F;
+    box-shadow: 3px 3px 4px orange;
+}
+
+details[open] > summary {
+    background-color: rgb(0, 0, 0);
+}
+.bold {
+    font-weight: 100;
+}
+.btn {
+    width: 125%;
+    display: float;
+    position: inherit;
+    height: 3.5rem;
+    border-radius: 16.67px;
+    margin-top: .75rem;
+    margin-bottom: .75rem;
+    font-size: x-large;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--Kanit);
+    background-color: #FF6347;
+}
+
+    .bold-underline {
+        font-weight: bold;
+        text-decoration: underline;
+    }
+    
+    .bold-underline{
+        font-weight: bold;
+        text-decoration: underline;
+    }
+.LinkedIn-btn {
+    display: center;
+    width: 150%;
+    height: 4rem;
+    font-size: large;
+    align-items: center;
+    justify-content: center;
+}
+.btn.btn-secondary {
+    background-color: ##FF6347;
+}
+.btn.btn-secondary:hover {
+    background-color: #040404;
+}
+.btn.light-btn:hover {
+    box-shadow: 
+        3px 3px #00000050,
+        4px 4px #00000025;
+}
+.btn.dark-btn:hover {
+    box-shadow:
+        3px 3px #FFFFFF50,
+        4px 4px #FFFFFF25;
+}
